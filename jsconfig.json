@@ -1,7 +1,17 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "about": ["src/app/about/*"],
+      "assets/*": ["src/assets/*"],
+      "components/*": ["src/components/*"],
+      "context-api/*": ["src/context-api/*"],
+      "hooks/*": ["src/Hooks/*"],
+      "imageConstant/*": ["src/imageConstant/*"],
+      "serviceEndPoints/*": ["src/serviceEndPoints/*"],
+      "services/*": ["src/services/*"],
+      "Gsap/*": ["src/Gsap/*"],
+      "utils/*": ["src/utils/*"]
     }
   }
 }

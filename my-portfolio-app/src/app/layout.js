@@ -19,8 +19,8 @@ export default function RootLayout({ children }) {
       setLoading(false);
     }, 1000);
 
-    // Mouse move event to update custom cursor position
     const handleMouseMove = (event) => {
+      console.log(event);
       const { clientX, clientY } = event;
       if (cursorRef.current) {
         cursorRef.current.style.left = `${clientX}px`;
@@ -28,7 +28,6 @@ export default function RootLayout({ children }) {
       }
     };
 
-    // Attach the mousemove listener
     document.addEventListener("mousemove", handleMouseMove);
 
     return () => {

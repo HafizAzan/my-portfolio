@@ -11,7 +11,13 @@
       "serviceEndPoints/*": ["src/serviceEndPoints/*"],
       "services/*": ["src/services/*"],
       "Gsap/*": ["src/Gsap/*"],
-      "utils/*": ["src/utils/*"]
+      "utils/*": ["src/utils/*"],
+      "store/*": ["src/store/*"],
+      "api/*": ["src/app/api/*"],
+      "libs/*": ["src/app/libs/*"],
+      "models/*": ["src/app/models/*"],
+      "blog/*": ["src/app/blog/*"],
+      "price/*": ["src/app/price/*"]
     }
   }
 }

@@ -2,31 +2,160 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  scroll-snap-align: center;
-  transition: all ease 300ms;
-}
-
 ::selection {
   background: purple;
   color: white;
 }
 
-.animated-box {
-  width: 200px;
-  height: 200px;
-  border-style: solid;
-  border-width: 10px;
-  border-color: red green purple yellow; /* Top, Right, Bottom, Left */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Starting shadow */
-  transition: box-shadow 0.3s ease;
+body {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-snap-align: center;
+  transition: all ease 300ms;
+  text-decoration: none;
+  font-family: "Urbanist", sans-serif !important;
+  font-weight: 500;
+  color: #000;
+  letter-spacing: 0.5px;
+  font-variant: tabular-nums;
+  background-color: #f8f8f8;
+  overflow-x: hidden;
+  list-style-type: none;
 }
 
-.text {
-  background: linear-gradient(to right, red, blue);
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.scroll-header {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.10196078431372549) !important;
+  background-color: #603676;
+  transition: background-color 0.5s ease 0s;
+}
+
+.bg-img {
+  background-image: url("../assets/mask.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.bg-about-img {
+  background-image: url("../assets/about_mask.png");
+  background-repeat: no-repeat;
+}
+
+&& :where(.css-dev-only-do-not-override-qnu6hi).ant-typography {
+  font-family: unset !important;
+}
+
+.box-shadow {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.10196078431372549) !important;
+}
+
+.sec-shadow {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.10196078431372549) !important;
+}
+
+.box-shadows:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.10196078431372549) !important;
+}
+
+.hover:hover {
+  color: white !important;
+  background-color: #b067e9 !important;
+  border: none !important;
+  transition: all ease 0.3s !important;
+}
+
+.onHover:hover {
+  color: white !important;
+  background-color: #423566 !important;
+  border: none !important;
+  transition: all ease 0.3s !important;
+}
+
+.contact:hover {
+  color: white !important;
+  background-color: #993795 !important;
+  border: none !important;
+  transition: all ease 0.3s !important;
+}
+
+&&
+  :where(.css-dev-only-do-not-override-qnu6hi).ant-btn-default:not(
+    :disabled
+  ):not(.ant-btn-disabled):hover {
+  color: unset;
+  background-color: unset;
+  border: unset;
+}
+
+.action-bg {
+  background-image: url("../assets/video_bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+#nav ul li a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: white;
+  transition: width 0.3s ease-in-out;
+}
+
+#nav ul li a:hover::before {
+  width: 100%;
+}
+
+.arrow-shadow {
+  box-shadow: 0 4px 10px rgba(98, 53, 119, 0.5019607843137255);
+  border-radius: 8px;
+}
+
+.h-contact {
+  background-image: url("../assets//contact.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.menu-icon {
+  display: none !important;
+}
+
+&& .ant-drawer-body,
+&& :where(.css-dev-only-do-not-override-qnu6hi).ant-drawer .ant-drawer-content {
+  background-color: #603676 !important;
+}
+
+&& :where(.css-dev-only-do-not-override-qnu6hi).ant-drawer .ant-drawer-mask {
+  position: unset !important;
+  inset: unset !important;
+  background: none !important ;
+}
+
+&& .ant-drawer .ant-drawer-content-wrapper {
+  box-shadow: transparent !important;
+  width: 100% !important;
+  max-width: unset !important;
+}
+
+@media (max-width: 768px) {
+  #nav ul {
+    display: none !important;
+  }
+  .menu-icon {
+    display: block !important;
+    position: relative;
+    z-index: 999;
+  }
+  #nav {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.10196078431372549) !important;
+    background-color: #603676;
+    transition: background-color 0.5s ease 0s;
+  }
 }

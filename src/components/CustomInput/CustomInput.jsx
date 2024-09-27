@@ -3,16 +3,10 @@
 import { Input } from "antd";
 import React, { memo, useState } from "react";
 
-const CustomInput = ({ onChange = () => {}, children, ...props }) => {
-  const [state, setState] = useState("azan");
+const CustomInput = ({ onChange = () => {}, placeholder, ...props }) => {
   return (
     <>
-      <Input
-        value={state}
-        placeholder={children}
-        onChange={onChange}
-        {...props}
-      />
+      <Input placeholder={placeholder} onChange={onChange} {...props} />
     </>
   );
 };

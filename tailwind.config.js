@@ -11,6 +11,9 @@ module.exports = {
         background: "black",
         foreground: "green",
       },
+      fontFamily: {
+        inherit: "inherit",
+      },
     },
   },
   plugins: [],

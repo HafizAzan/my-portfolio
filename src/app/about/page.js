@@ -1,15 +1,30 @@
 "use client";
-import CustomButton from "components/CustomButton/CustomButton";
-import { CustomTypography } from "components/CustomText/CustomText";
-import Link from "next/link";
+import React from "react";
+import Future from "container/HomePages/Future";
+import { imageUrl } from "imageConstant/ImagesUrl";
+import CustomTextWithImage from "components/CustomTextWithImage/CustomTextWithImage";
+import BestAmong from "container/AboutPages/BestAmong";
+import Actions from "container/HomePages/Actions";
 
 const page = () => {
   return (
     <>
-      <CustomTypography>hi I am Azan Khan</CustomTypography>
-      <Link href="./" className="grid place-content-center">
-        <CustomButton type="primary">Go To Back</CustomButton>
-      </Link>
+      <Future
+        className={"!bg-cover pt-[80px] !h-[82vh] bg-about-img"}
+        con={"!h-[70vh]"}
+        src={imageUrl.about_main}
+        height={"!h-unset w-[45%]"}
+      >
+        <CustomTextWithImage
+          image={imageUrl.small_arrow}
+          imgClass="w-[26px]"
+          className="!text-[2.2em] mb-[28%]"
+        >
+          About Us
+        </CustomTextWithImage>
+      </Future>
+      <BestAmong />
+      <Actions title="Glimpse of Previous Sessions" width="w-[55%]" />
     </>
   );
 };

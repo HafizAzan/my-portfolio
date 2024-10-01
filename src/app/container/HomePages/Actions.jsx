@@ -8,11 +8,11 @@ import CustomTextWithImage from "components/CustomTextWithImage/CustomTextWithIm
 import Image from "next/image";
 import React from "react";
 
-const Actions = ({ title = "Html/Css Demo Classes", width = "w-[45.4%]" }) => {
+const Actions = ({ title = "Html/Css Demo Classes", width = "w-[310px]" }) => {
   const { boxRef } = AnimationWithGsap();
   return (
     <>
-      <section className="w-full relative pt-12">
+      <section className="main-action w-full relative pt-12">
         <CustomImgArrow
           className="w-full flex justify-end absolute top-[-30px]"
           imgClass="w-[70px]"

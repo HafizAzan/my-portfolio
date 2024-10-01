@@ -1,11 +1,9 @@
 "use client";
-import React from "react";
+import CustomTextWithImage from "components/CustomTextWithImage/CustomTextWithImage";
+import InfoContact from "container/ContactPages/InfoContact";
 import Future from "container/HomePages/Future";
 import { imageUrl } from "imageConstant/ImagesUrl";
-import CustomTextWithImage from "components/CustomTextWithImage/CustomTextWithImage";
-import BestAmong from "container/AboutPages/BestAmong";
-import Actions from "container/HomePages/Actions";
-import Teachers from "container/AboutPages/Teachers";
+import React from "react";
 
 const page = () => {
   return (
@@ -13,7 +11,7 @@ const page = () => {
       <Future
         className={"!bg-cover pt-[80px] !h-[82vh] bg-about-img"}
         con={"!h-[70vh]"}
-        src={imageUrl.about_main}
+        src={imageUrl.contact_pic}
         height={"!h-unset w-[45%]"}
       >
         <CustomTextWithImage
@@ -21,12 +19,10 @@ const page = () => {
           imgClass="w-[26px]"
           className="!text-[2.2em] mb-[28%] about-img"
         >
-          About Us
+          Contact Us
         </CustomTextWithImage>
       </Future>
-      <BestAmong />
-      <Actions title="Glimpse of Previous Sessions" width="w-[55%] " />
-      <Teachers />
+      <InfoContact />
     </>
   );
 };

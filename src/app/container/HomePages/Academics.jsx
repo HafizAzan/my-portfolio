@@ -12,17 +12,17 @@ import React, { memo } from "react";
 const Academics = () => {
   return (
     <>
-      <section className="h-[335px] mt-7">
+      <section className="main-about h-auto mb-8 mt-7">
         <main className="container">
           <div className="flex justify-between items-end mb-8">
-            <div className="w-[74%]">
+            <div className=" w-[74%]">
               <CustomTextWithImage
                 className="!text-[#423566]"
                 image={imageUrl.purple_arrow}
               >
                 About Us
               </CustomTextWithImage>
-              <hr className="w-[41.2%] h-[2px] bg-gray-400 text-gray-400 my-3" />
+              <hr className="w-[414px] h-[2px] bg-gray-400 text-gray-400 my-3" />
               <CustomTypography className="text-[#993795] text-[1.8em]">
                 Why We Are the Best Among All
               </CustomTypography>
@@ -41,10 +41,10 @@ const Academics = () => {
           </div>
         </main>
       </section>
-      <section className="w-full h-[650px]">
+      <section className="main-academic w-full h-auto mb-8">
         <div className="flex items-center">
           <CustomImgArrow
-            className="w-[5%] !self-start"
+            className="w-[5%] !self-start side-arrow"
             imgClass="w-[40px]"
             src={imageUrl.side_arrow}
           />
@@ -57,7 +57,7 @@ const Academics = () => {
                 >
                   Academics
                 </CustomTextWithImage>
-                <hr className="w-[22%] h-[2px] bg-gray-400 text-gray-400 my-3" />
+                <hr className="w-[230px] h-[2px] bg-gray-400 text-gray-400 my-3" />
                 <CustomTypography className="text-[#993795] text-[1.8em]">
                   Courses We Offer
                 </CustomTypography>
@@ -72,10 +72,13 @@ const Academics = () => {
               className={
                 "box-shadows transition-all duration-[0.3s] ease-in cursor-pointer hover:transition-all hover:duration-[0.3s] hover:ease-in"
               }
+              style={{
+                width: "calc(90% - 30px)",
+              }}
             />
             <CustomButton
-              className="transition-all duration-[0.3s] ease-in-out rounded-[0px] w-[13%] 
-            h-[3.5vw] text-[1em] text-white bg-[#993795]  border-none font-inherit mt-12 font-normal
+              className="transition-all duration-[0.3s] ease-in-out rounded-[0px] w-[155px] 
+            h-[43px] text-[1em] text-white bg-[#993795]  border-none font-inherit mt-12 font-normal
              sec-shadow onHover "
             >
               Join Us Today

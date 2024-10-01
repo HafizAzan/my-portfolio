@@ -4,21 +4,12 @@ import { imageUrl } from "imageConstant/ImagesUrl";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { navItems } from "utils/helper.function";
 
 const NavBar = () => {
   const [activeLink, setActiveLink] = useState("Home");
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const navItems = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    { label: "Contact", href: "/" },
-    {
-      label: "Demo Classes",
-      href: "https://www.youtube.com/watch?v=JNixBunE76U&list=PLhruWMYekkKoKL3BA-_RJRUNz4RTNsAac&ab_channel=MuzammilRafay",
-      external: true,
-    },
-  ];
   useEffect(() => {
     const ScrollHandler = () => {
       const scrollY = window.scrollY;
@@ -69,10 +60,10 @@ const NavBar = () => {
           ))}
         </ul>
         <i
-          className="fa-solid fa-bars menu-icon text-[40px] text-white pr-6"
+          className="fa-solid fa-bars menu-icon text-[22px] rounded-[5px] text-white px-3 py-2 mr-6 border-[2px] border-white text-center"
           onClick={() => setOpen(true)}
         ></i>
-        <CustomDrawer open={open} setOpen={setOpen} />
+        {/* <CustomDrawer open={open} setOpen={setOpen} /> */}
       </nav>
     </>
   );

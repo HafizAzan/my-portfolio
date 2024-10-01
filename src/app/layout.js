@@ -1,16 +1,13 @@
+"use client";
 import { ReactQueryProvider } from "./ReactQueryProvider";
 import LayoutComponents from "container/layout/layout";
 import "./globals.css";
-
-export const metadata = {
-  title: "Squad Coders Dev",
-  description: "Squad Coders Dev Website",
-};
+import { metadata } from "./MetaData";
 
 export default function RootLayout({ children }) {
   return (
     <ReactQueryProvider>
-      <html lang="urdu">
+      <html lang="en">
         <head>
           <title>{metadata.title}</title>
           <meta name="description" content={metadata.description} />
@@ -18,6 +15,7 @@ export default function RootLayout({ children }) {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
+          {/* <link rel="icon" href="assets/purplearrow.png" type="image/x-icon" /> */}
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"

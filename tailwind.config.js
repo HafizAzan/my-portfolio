@@ -14,6 +14,9 @@ module.exports = {
       fontFamily: {
         inherit: "inherit",
       },
+      aspectRatio: {
+        custom: "1/1.3",
+      },
     },
   },
   plugins: [],

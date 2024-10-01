@@ -5,10 +5,7 @@ import React, { memo } from "react";
 
 const CustomArrayImage = ({ className, ...props }) => {
   return (
-    <div
-      className="flex flex-wrap gap-[73px] justify-center w-full] "
-      {...props}
-    >
+    <div className="c-arr-img flex flex-wrap gap-[73px] w-full" {...props}>
       {imageUrls?.map((url, index) => {
         return (
           <Image

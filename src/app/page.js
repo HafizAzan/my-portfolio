@@ -10,7 +10,7 @@ export default function App() {
   return (
     <>
       <Future show={false}>
-        <CustomTextWithImage image={imageUrl.small_arrow}>
+        <CustomTextWithImage image={imageUrl.small_arrow} className="mb-3">
           We help you overcome
         </CustomTextWithImage>
       </Future>

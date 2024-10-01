@@ -4,22 +4,15 @@ import { imageUrl } from "imageConstant/ImagesUrl";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import { navItems } from "utils/helper.function";
 
 const CustomDrawer = ({ open, setOpen }) => {
   const [activeLink, setActiveLink] = useState("Home");
-  const navItems = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    { label: "Contact", href: "/" },
-    {
-      label: "Demo Classes",
-      href: "https://www.youtube.com/watch?v=JNixBunE76U&list=PLhruWMYekkKoKL3BA-_RJRUNz4RTNsAac&ab_channel=MuzammilRafay",
-      external: true,
-    },
-  ];
+
   const onClose = () => {
     setOpen(false);
   };
+
   return (
     <>
       <Drawer
@@ -34,7 +27,7 @@ const CustomDrawer = ({ open, setOpen }) => {
         onClose={onClose}
         open={open}
       >
-        <nav className={`flex justify-between w-full pr-4`}>
+        <nav className={`flex justify-between w-full pr-4 items-center`}>
           <Link href="/">
             <Image
               src={imageUrl.logo}
@@ -43,11 +36,11 @@ const CustomDrawer = ({ open, setOpen }) => {
             />
           </Link>
           <i
-            className="fa-solid fa-x menu-icon text-[40px] text-white cursor-pointer"
+            className="fa-solid fa-x menu-icon text-[22px] text-white cursor-pointer"
             onClick={onClose}
           ></i>
         </nav>
-        <div>
+        <div className="nav">
           <ul className="flex flex-col gap-8 pt-6 pl-2 text-[20px]">
             {navItems.map((item) => (
               <li key={item.label}>

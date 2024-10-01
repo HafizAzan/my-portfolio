@@ -14,7 +14,7 @@ import footerLogo from "assets/footer-logo.png";
 import about_main from "assets/aboutmain.png";
 import about_mask from "assets/about_mask.png";
 import among_com from "assets/among.png";
-//skills//
+import contact_pic from "assets/contact_pic.png";
 import side_arrow from "assets/side.png";
 import html from "assets/html.png";
 import css from "assets/css.png";
@@ -28,9 +28,13 @@ import nest from "assets/nest.webp";
 import express_js from "assets/expressjs.png";
 import sql from "assets/sql.png";
 import mongo_db from "assets/mongo-db.png";
+import email_info from "assets/email.png";
+import phone_info from "assets/phone_info.png";
+import sir_muzzammil from "assets/sir_m_1.jpg";
+import sir_musaddiq from "assets/sir_m_2.jpg";
+import Polygon from "assets/Polygon.png";
 
 export const imageUrl = {
-  // skills //
   html,
   css,
   js,
@@ -43,7 +47,6 @@ export const imageUrl = {
   nodejs,
   express_js,
   mongo_db,
-  // skills //
   MaskBg,
   logo,
   comp,
@@ -60,9 +63,14 @@ export const imageUrl = {
   about_main,
   about_mask,
   among_com,
+  contact_pic,
+  email_info,
+  phone_info,
+  sir_muzzammil,
+  sir_musaddiq,
+  Polygon,
 };
 
-//skills//
 export const imageUrls = [
   imageUrl.html,
   imageUrl.css,

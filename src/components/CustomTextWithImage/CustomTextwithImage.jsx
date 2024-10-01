@@ -15,7 +15,7 @@ const CustomTextWithImage = ({
       className={`text-[1.6em] text-white flex gap-3 items-center  ${className}`}
       {...props}
     >
-      <Image src={image} className={imgClass} />
+      <Image src={image} className={`${imgClass}`} />
       {children}
     </CustomTypography>
   );

@@ -2,10 +2,13 @@
 import CustomTextWithImage from "components/CustomTextWithImage/CustomTextWithImage";
 import InfoContact from "container/ContactPages/InfoContact";
 import Future from "container/HomePages/Future";
+import ScrollingAnimationWithGsap from "Gsap/ScrollingAnimation";
 import { imageUrl } from "imageConstant/ImagesUrl";
 import React from "react";
 
 const page = () => {
+  const { leftDiv, fadeText } = ScrollingAnimationWithGsap();
+
   return (
     <>
       <Future
@@ -22,7 +25,7 @@ const page = () => {
           Contact Us
         </CustomTextWithImage>
       </Future>
-      <InfoContact />
+      <InfoContact leftDiv={leftDiv} academicAboutRef={fadeText} />
     </>
   );
 };

@@ -3,7 +3,7 @@ import { Drawer } from "antd";
 import { imageUrl } from "imageConstant/ImagesUrl";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { navItems } from "utils/helper.function";
 
 const CustomDrawer = ({ open, setOpen }) => {
@@ -26,6 +26,7 @@ const CustomDrawer = ({ open, setOpen }) => {
         width={500}
         onClose={onClose}
         open={open}
+        maskClosable={true}
       >
         <nav className={`flex justify-between w-full pr-4 items-center`}>
           <Link href="/">

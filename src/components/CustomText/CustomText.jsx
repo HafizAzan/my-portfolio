@@ -1,11 +1,11 @@
 "use client";
 import { Typography } from "antd";
-import React from "react";
+import React, { forwardRef } from "react";
 
-export const CustomTypography = ({ level = null, children, ...props }) => {
+export const CustomTypography = forwardRef(({ children, ...props }, ref) => {
   return (
-    <Typography level={level} {...props}>
+    <Typography ref={ref} {...props}>
       {children}
     </Typography>
   );
-};
+});

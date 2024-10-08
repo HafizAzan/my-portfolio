@@ -1,15 +1,21 @@
+
+
 "use client";
-import CustomArrayImage from "components/CustomArrayImage/CustomArrayImage";
-import CustomButton from "components/CustomButton/CustomButton";
-import CustomImgArrow from "components/CustomImgArrow/CustomImgArrow";
 import { CustomTypography } from "components/CustomText/CustomText";
 import CustomTextWithImage from "components/CustomTextWithImage/CustomTextwithImage";
+import ScrollingAnimationWithGsap from "Gsap/ScrollingAnimation";
 import { imageUrl } from "imageConstant/ImagesUrl";
 import Image from "next/image";
-import Link from "next/link";
 import React, { memo } from "react";
 
 const Academics = () => {
+  const {
+    imageRef,
+    academicAboutRef,
+    academicAboutHr,
+    academicAboutParagraph,
+    fadeText,
+  } = ScrollingAnimationWithGsap();
   return (
     <>
       <section className="main-about h-auto mb-8 mt-7">
@@ -19,18 +25,25 @@ const Academics = () => {
               <CustomTextWithImage
                 className="!text-[#423566]"
                 image={imageUrl.purple_arrow}
+                ref={academicAboutRef}
               >
                 About Us
               </CustomTextWithImage>
-              <hr className="w-[414px] h-[2px] bg-gray-400 text-gray-400 my-3" />
-              <CustomTypography className="text-[#993795] text-[1.8em]">
+              <hr
+                ref={academicAboutHr}
+                className="w-[414px] h-[2px] bg-gray-400 text-gray-400 my-3"
+              />
+              <CustomTypography
+                ref={academicAboutParagraph}
+                className="text-[#993795] text-[1.8em]"
+              >
                 Why We Are the Best Among All
               </CustomTypography>
             </div>
-            <Image src={imageUrl.shape} className="w-[170px]" />
+            <Image src={imageUrl.shape} className="w-[170px]" ref={imageRef} />
           </div>
           <div>
-            <CustomTypography className="text-[0.9em] ">
+            <CustomTypography ref={fadeText} className="text-[0.9em] ">
               We are teaching how to code professionally in the web development
               field by creating some practical projects like Web Admin Panels
               (WEBSITES WITH ADMIN PANELS, RESTAURANT MANGEMENT SYSTEMS), Mobile
@@ -40,51 +53,6 @@ const Academics = () => {
             </CustomTypography>
           </div>
         </main>
-      </section>
-      <section className="main-academic w-full h-auto mb-8">
-        <div className="flex items-center">
-          <CustomImgArrow
-            className="w-[5%] !self-start side-arrow"
-            imgClass="w-[40px]"
-            src={imageUrl.side_arrow}
-          />
-          <main className="container !w-[90%]">
-            <div className="w-[97%] flex items-end mb-8">
-              <div className="w-[85%]">
-                <CustomTextWithImage
-                  className="!text-[#423566]"
-                  image={imageUrl.purple_arrow}
-                >
-                  Academics
-                </CustomTextWithImage>
-                <hr className="w-[230px] h-[2px] bg-gray-400 text-gray-400 my-3" />
-                <CustomTypography className="text-[#993795] text-[1.8em]">
-                  Courses We Offer
-                </CustomTypography>
-              </div>
-              <Link href="/">
-                <CustomButton className="border-none !shadow-none  text-[#423566] text-[1em] font-inherit font-normal !bg-transparent">
-                  View All Courses
-                </CustomButton>
-              </Link>
-            </div>
-            <CustomArrayImage
-              className={
-                "box-shadows transition-all duration-[0.3s] ease-in cursor-pointer hover:transition-all hover:duration-[0.3s] hover:ease-in"
-              }
-              style={{
-                width: "calc(90% - 30px)",
-              }}
-            />
-            <CustomButton
-              className="transition-all duration-[0.3s] ease-in-out rounded-[0px] w-[155px] 
-            h-[43px] text-[1em] text-white bg-[#993795]  border-none font-inherit mt-12 font-normal
-             sec-shadow onHover "
-            >
-              Join Us Today
-            </CustomButton>
-          </main>
-        </div>
       </section>
     </>
   );

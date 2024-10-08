@@ -3,6 +3,7 @@ import CustomTextWithImage from "components/CustomTextWithImage/CustomTextWithIm
 import Academics from "container/HomePages/Academics";
 import Actions from "container/HomePages/Actions";
 import Future from "container/HomePages/Future";
+import Skill from "container/HomePages/Skill";
 import { imageUrl } from "imageConstant/ImagesUrl";
 import React from "react";
 
@@ -15,6 +16,7 @@ export default function App() {
         </CustomTextWithImage>
       </Future>
       <Academics />
+      <Skill />
       <Actions />
     </>
   );

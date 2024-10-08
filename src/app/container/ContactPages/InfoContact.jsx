@@ -3,15 +3,19 @@ import { imageUrl } from "imageConstant/ImagesUrl";
 import React from "react";
 import CustomInfoCard from "components/CustomInfoCard/CustomInfoCard";
 
-const InfoContact = () => {
+const InfoContact = ({ leftDiv, academicAboutRef }) => {
   return (
-    <section className="h-[400px] mt-7 relative">
+    <section className="main-info h-[400px] mb-6 mt-12 relative">
       <CustomImgArrow
         className="w-[7%] absolute top-[80px]"
         imgClass="w-[190px]"
         src={imageUrl.side_arrow}
+        ref={leftDiv}
       />
-      <main className="container flex justify-center gap-[85px] items-center">
+      <main
+        className="container flex justify-center gap-[85px] items-center"
+        ref={academicAboutRef}
+      >
         <CustomInfoCard src={imageUrl.email_info} label="Email">
           <a
             href="mailto:info@squadcodersdev.com"

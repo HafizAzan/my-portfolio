@@ -6,12 +6,13 @@ import CustomTextWithImage from "components/CustomTextWithImage/CustomTextWithIm
 import BestAmong from "container/AboutPages/BestAmong";
 import Actions from "container/HomePages/Actions";
 import Teachers from "container/AboutPages/Teachers";
+import Vision from "container/AboutPages/Vision";
 
 const page = () => {
   return (
     <>
       <Future
-        className={"!bg-cover pt-[80px] !h-[82vh] bg-about-img"}
+        className={"!bg-cover pt-[80px] !h-[34rem] bg-about-img"}
         con={"!h-[70vh]"}
         src={imageUrl.about_main}
         height={"!h-unset w-[45%]"}
@@ -25,7 +26,12 @@ const page = () => {
         </CustomTextWithImage>
       </Future>
       <BestAmong />
-      <Actions title="Glimpse of Previous Sessions" width="w-[55%] " />
+      <Vision />
+      <Actions
+        title="Glimpse of Previous Sessions"
+        width="about-hr w-[380px]"
+        cal="cal"
+      />
       <Teachers />
     </>
   );

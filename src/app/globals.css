@@ -25,7 +25,7 @@ body {
   color: #000;
   letter-spacing: 0.5px;
   font-variant: tabular-nums;
-  background-color: #f8f8f8e8;
+  background-color: #dfd4d49d;
   overflow-x: hidden;
   list-style-type: none;
 }
@@ -45,6 +45,7 @@ body {
   background-image: url("../assets/mask.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  padding-top: 120px;
 }
 
 .bg-about-img {
@@ -107,7 +108,7 @@ body {
 .bg-pol-img {
   background-image: url("../assets/Polygon.png");
   background-repeat: no-repeat;
-  background-size: 470px 570px;
+  background-size: 35vw 48vw;
 }
 
 .nav ul li a::before,
@@ -148,9 +149,7 @@ body {
 }
 
 && :where(.css-dev-only-do-not-override-qnu6hi).ant-drawer .ant-drawer-mask {
-  position: unset !important;
-  inset: unset !important;
-  background: none !important ;
+  background: transparent !important;
 }
 
 && .ant-drawer .ant-drawer-content-wrapper {
@@ -158,15 +157,68 @@ body {
   width: 100% !important;
   max-width: unset !important;
 }
+
+&& :where(.css-dev-only-do-not-override-qnu6hi).ant-modal {
+  width: 80% !important;
+  height: 80% !important;
+  transform-origin: center !important;
+  margin: 0 auto !important;
+  top: 13%;
+}
+
+&& .ant-modal-content {
+  height: 40vw;
+  background-color: transparent !important;
+}
+
+&& .ant-modal-body {
+  width: 100%;
+  height: 100%;
+}
+
+.play-btn {
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+.ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 14px solid purple;
+  box-shadow: "0px 0px 19px 14px purple";
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
 @media (max-width: 1244px) {
   .sub-footer {
     font-size: 14px;
+  }
+  .main-about-us .container .about-text > article:first-child {
+    font-size: 2.2vw;
+  }
+  .main-about-us .container .about-text > .sec-article {
+    font-size: 2.3vw;
+  }
+  .main-about-us .container .about-text > article:last-child {
+    font-size: 1.1vw;
+  }
+  .main-about-us .container .about-text > hr {
+    width: 33.5vw;
   }
 }
 
 @media (max-width: 1194px) {
   .future-text {
-    min-width: 45%;
+    min-width: 50%;
   }
   .one-child-foot img {
     width: 190px;
@@ -176,19 +228,9 @@ body {
   }
 }
 
-@media (max-width: 1170px) {
-  .main-academic .c-arr-img {
-    gap: 55px;
-  }
-  .main-academic .c-arr-img img {
-    width: 180px;
-    height: 80px;
-  }
-}
-
 @media (max-width: 1068px) {
   .future-img {
-    min-width: 40%;
+    min-width: 380px;
   }
 
   .future-text {
@@ -198,9 +240,16 @@ body {
   .future-text article:nth-child(2) {
     line-height: 35px;
   }
-  .bg-about-img .container,
-  .bg-img .container {
-    height: 90%;
+  .bg-img {
+    padding-top: 155px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .action-bg {
+    padding-bottom: 24px;
+    height: 100%;
+    background-size: auto;
   }
 }
 
@@ -219,12 +268,12 @@ body {
     transition: background-color 0.5s ease 0s;
   }
   .future-text {
-    font-size: 13px;
+    font-size: 15px;
   }
 
   .future-text button {
-    width: 120px;
-    height: 30px;
+    width: 130px;
+    height: 35px;
   }
   .text-with-img {
     width: 17px;
@@ -247,6 +296,21 @@ body {
   .three-child-foot {
     margin-left: 20px;
   }
+  .main-about-us .container .about-text > article:first-child {
+    font-size: 24px;
+  }
+  .main-about-us .container .about-text > article:last-child {
+    font-size: 12px;
+  }
+  .main-about-us .about-arrow {
+    top: -10px;
+  }
+  .main-about-us .container .about-text > .sec-article {
+    font-size: 2vw;
+  }
+  .main-about-us .container .about-text > hr {
+    width: 29.5vw;
+  }
 }
 
 @media (max-width: 860px) {
@@ -260,12 +324,46 @@ body {
     line-height: 30px;
     font-size: 1.8em;
   }
-  .main-academic .c-arr-img {
-    gap: 50px;
-  }
   .main-academic .c-arr-img img {
-    width: 195px;
-    height: 75px;
+    width: 26%;
+  }
+}
+
+@media (max-width: 838px) {
+  .main-about-us .container {
+    flex-flow: column-reverse wrap;
+    gap: 0px;
+  }
+  .main-about-us .container .about-text > .sec-article {
+    font-size: 20px;
+  }
+  .main-about-us .container .about-text > hr {
+    width: 290px;
+  }
+  .about-text {
+    width: 90%;
+  }
+  .com-about {
+    width: 400px;
+  }
+  .main-vision {
+    margin-top: 55px;
+  }
+  .main-vision .container {
+    flex-flow: column wrap;
+    gap: 8px;
+  }
+  .main-vision .container div:first-child {
+    width: 90%;
+  }
+  .main-vision .container div:first-child > article:last-child {
+    font-size: 18px;
+  }
+  .main-vision .container div:first-child > hr {
+    width: 396px;
+  }
+  .main-vision .container div:last-child {
+    width: 90%;
   }
 }
 
@@ -279,7 +377,6 @@ body {
   .about-img {
     margin-bottom: unset !important;
   }
-
   .bg-img {
     background-size: cover;
     height: 55rem;
@@ -290,10 +387,12 @@ body {
   .bg-img .container {
     height: 100% !important;
     flex-flow: column wrap;
-    margin-top: 50px;
+    justify-content: flex-start;
+    gap: 80px;
   }
   .future-text {
     width: 90% !important;
+    margin-bottom: 0px;
   }
   .future-text button {
     width: 145px !important;
@@ -301,7 +400,7 @@ body {
     font-size: 1em;
   }
   .future-img {
-    width: 485px !important;
+    min-width: 65vw !important;
   }
   .sub-footer .one-child-foot,
   .sub-footer .three-child-foot,
@@ -359,13 +458,40 @@ body {
   .main-academic main > div:first-child > a > button {
     font-size: 15px;
   }
-  .main-academic .c-arr-img {
-    column-gap: 100px;
-    justify-content: center;
+  .cal {
+    font-size: calc(3.4vw + 0.3vw) !important;
   }
-  .main-academic .c-arr-img img {
-    width: 185px;
-    height: 70px;
+  .bg-pol-img {
+    width: 85vw;
+    height: 100vw;
+    background-size: 80vw 100vw;
+  }
+  .teacher .container > div:last-child {
+    flex-direction: column;
+    height: auto;
+    gap: 50px;
+  }
+  .bg-pol-img > img {
+    width: 50vw;
+  }
+  .bg-pol-img > a {
+    width: 44.8%;
+    font-size: 20px;
+  }
+  .bg-pol-img > a > article:first-child {
+    font-size: 3.3vw;
+  }
+  .bg-pol-img > a > article:last-child {
+    font-size: 2vw;
+  }
+  .main-info .container {
+    flex-flow: column wrap;
+  }
+  .main-info .container > div {
+    width: 400px;
+  }
+  .main-info {
+    height: auto;
   }
 }
 
@@ -388,6 +514,38 @@ body {
     height: 55rem;
     background-size: cover;
   }
+  .action-bg .container > div:first-child {
+    height: 190px;
+  }
+  .action-bg .container > div:first-child > div > article:last-child {
+    font-size: calc(4.2vw + 0.3vw);
+  }
+  .action-bg .container > div:first-child > div > article:first-child {
+    font-size: calc(4vw + 0.3vw);
+  }
+  .action-bg .container > div:first-child > div > hr {
+    width: calc(48.5vw + 0.5px);
+  }
+  .action-bg .container > div:last-child > div {
+    top: 46%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+  }
+  .main-academic .c-arr-img img {
+    width: 43%;
+  }
+  .teacher .container > div:first-child > div > article:first-child {
+    font-size: calc(4vw + 0.3vw);
+  }
+  .teacher .container > div:first-child > div > article:last-child {
+    font-size: calc(4vw + 0.3vw);
+  }
+  .teacher .container > div:first-child > div > hr {
+    width: calc(50.5vw + 0.3vw);
+  }
+  .teacher .container > div:first-child > img {
+    width: calc(105px + 0.3vw);
+  }
 }
 
 @media (max-width: 500px) {
@@ -400,10 +558,6 @@ body {
   .ant-drawer-body nav a img,
   #nav a img {
     width: 185px;
-  }
-  .bg-about-img,
-  .bg-img {
-    height: 50rem;
   }
   .future-text {
     text-align: center;
@@ -427,9 +581,6 @@ body {
   .main-about main img {
     max-width: 90px;
   }
-  .main-about main > div > div > article:first-child {
-    font-size: calc(1.1rem + 0.2vw);
-  }
   .main-about main > div > div > hr {
     width: 17.4rem;
   }
@@ -442,9 +593,18 @@ body {
   .main-academic .c-arr-img {
     gap: 30px;
   }
+  .main-vision .container div:first-child > article:last-child {
+    font-size: 3vw;
+  }
+  .main-vision .container div:first-child > hr {
+    width: 68svw;
+  }
 }
 
 @media (max-width: 470px) {
+  .main-about main > div > img {
+    align-self: end;
+  }
   .main-about main > div:first-child {
     flex-flow: column-reverse wrap;
     align-items: center;
@@ -462,21 +622,65 @@ body {
     align-items: stretch;
   }
   .main-academic main > div:first-child > a {
-    align-self: center;
     margin-top: 20px;
   }
-}
-
-@media (max-width: 425px) {
-  .bg-about-img,
-  .bg-img {
-    height: 45rem;
+  .main-academic .c-arr-img img {
+    width: 100%;
+  }
+  #setting {
+    align-self: center;
+    width: 72px;
+  }
+  .action-bg .container > div:first-child > div > article:first-child {
+    font-size: 23px;
+  }
+  .action-bg .container > div:first-child > div > article:first-child > img {
+    width: 25px;
+  }
+  .main-vision .container div:first-child > article:last-child {
+    font-size: 5vmin;
+  }
+  .main-vision .container div:first-child > hr {
+    width: 65vmin;
+  }
+  .bg-pol-img {
+    width: 60vw;
+    height: 100vw;
+    background-size: 67vw 93vw;
+  }
+  .bg-pol-img > img {
+    width: 35vw;
+  }
+  .bg-pol-img > a {
+    width: 80%;
+  }
+  .bg-pol-img > a > article:first-child {
+    font-size: 4.1vw;
+  }
+  .bg-pol-img > a > article:last-child {
+    font-size: 3vw;
+  }
+  .teacher .container > div:first-child {
+    flex-flow: column-reverse;
+  }
+  .teacher .container > div:first-child > div {
+    width: 100%;
+  }
+  .teacher .container > div:first-child > div > article:first-child {
+    font-size: 1.6rem;
+  }
+  .teacher .container > div:first-child > div > article:last-child {
+    font-size: 1.4rem;
+  }
+  .teacher .container > div:first-child > div > hr {
+    width: calc(58.5vw + 0.3vw);
   }
 }
 
 @media (max-width: 360px) {
   .future-text {
     min-width: 100%;
+    margin-bottom: 0px;
   }
   .container div article:first-child {
     font-size: 1.3em;
@@ -486,6 +690,30 @@ body {
   }
   .container div hr {
     width: 240px;
+  }
+  .bg-img {
+    height: auto;
+  }
+  .main-vision .container div article:last-child {
+    font-size: 4vmin;
+  }
+  .main-about-us .container .about-text > hr {
+    width: 230px;
+  }
+  .main-about-us .container .about-text > .sec-article {
+    font-size: 24px;
+  }
+  .main-vision .container div:first-child > article:last-child {
+    font-size: 6vmin;
+  }
+  .cal {
+    font-size: 5vmin !important;
+  }
+  .teacher .container div article:first-child {
+    font-size: 4vw;
+  }
+  .teacher .container div article:last-child {
+    font-size: 3vw;
   }
 }
 

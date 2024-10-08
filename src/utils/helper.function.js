@@ -77,3 +77,10 @@ export const infoItems = [
     icon: "fas fa-map-marker-alt",
   },
 ];
+
+export const inputArray = [
+  { name: "fullname", placeholder: "Fullname" },
+  { name: "email", placeholder: "Email" },
+  { name: "phone", placeholder: "Phone Number" },
+  { name: "education", placeholder: "Education" },
+];

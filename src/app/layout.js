@@ -5,9 +5,11 @@ import "./globals.css";
 import { metadata } from "./MetaData";
 import React, { useState, useEffect } from "react";
 import CustomLoader from "components/CustomLoader/CustomLoader";
+import { usePathname } from "next/navigation";
 
 export default function RootLayout({ children }) {
   const [loading, setLoading] = useState(true);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleLoad = () => {
@@ -20,11 +22,17 @@ export default function RootLayout({ children }) {
 
     window.addEventListener("load", handleLoad);
 
+    setLoading(true);
+    const timeoutAfterRouteChange = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+
     return () => {
       window.removeEventListener("load", handleLoad);
       clearTimeout(timeout);
+      clearTimeout(timeoutAfterRouteChange);
     };
-  }, []);
+  }, [pathname]);
 
   return (
     <ReactQueryProvider>
@@ -32,6 +40,11 @@ export default function RootLayout({ children }) {
         <head>
           <title>{metadata.title}</title>
           <meta name="description" content={metadata.description} />
+          <link
+            rel="icon"
+            href="../assets/purplearrow.png"
+            type="image/x-icon"
+          />
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0"

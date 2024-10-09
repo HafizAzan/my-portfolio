@@ -1,23 +1,27 @@
 "use client";
 import CustomDrawer from "components/CustomDrawer/CustomDrawer";
+import CustomLoader from "components/CustomLoader/CustomLoader";
 import { imageUrl } from "imageConstant/ImagesUrl";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import React, { useEffect, useState, useTransition } from "react";
 import { navItems } from "utils/helper.function";
 
 const NavBar = () => {
-  const router = usePathname();
-
-  const [activeLink, setActiveLink] = useState(() => {
-    const currentPath = router;
-    const matchingNavItem = navItems.find((item) => item.href === currentPath);
-    return matchingNavItem ? matchingNavItem.label : "Home";
-  });
-
+  const currentPath = usePathname();
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
+  const [activeLink, setActiveLink] = useState("Home");
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const matchingNavItem = navItems.find((item) => item.href === currentPath);
+    if (matchingNavItem) {
+      setActiveLink(matchingNavItem.label);
+    }
+  }, [currentPath]);
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -30,13 +34,20 @@ const NavBar = () => {
       window.removeEventListener("scroll", scrollHandler);
     };
   }, []);
+
+  const handleNavigation = (href) => {
+    startTransition(() => {
+      router.push(href);
+    });
+  };
+
   return (
     <>
       <nav
         id="nav"
-        className={` fixed top-0 flex justify-between w-full h-[5rem] transition-all duration-200 ease-in-out items-center pl-5 z-[1000] ${
+        className={`fixed top-0 flex justify-between w-full h-[5rem] transition-all duration-200 ease-in-out items-center pl-5 z-[1000] ${
           scrolled
-            ? " scroll-header"
+            ? "scroll-header"
             : "bg-transparent transition-all duration-200 ease-in-out"
         } `}
       >
@@ -56,7 +67,7 @@ const NavBar = () => {
                   target: "_blank",
                   rel: "noopener noreferrer",
                 })}
-                onClick={() => setActiveLink(item.label)}
+                onClick={() => handleNavigation(item.href)}
                 className={`relative text-white text-[1em] pb-2 ${
                   activeLink === item.label ? "border-b-2 border-white" : ""
                 }`}
